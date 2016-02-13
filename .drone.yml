@@ -2,12 +2,24 @@ build:
   image: musedlab/buildbot-img:v1
   privileged: true
   volumes:
-    - /srv/app/releases/picake:/host-release
+    - /srv/app/releases/musedboxbase:/host-release
   environment:
     - HOSTDIR=/host-release
-    - PRIV_KEY=$$PRIV_KEY
+    - APPDIR=/srv/app
   commands:
     - make build && make clean
     - make deploy
   branches:
     - master
+notify:
+  slack:
+    webhook_url: $$SLACK_WEBHOOK
+    channel: musedbox
+    username: buildbot
+    template: |
+      Hi from buildbot! Build of musedboxbase image from commit <{{ build.link_url }}|{{truncate build.commit 7}}>: {{ build.message }} finished with a {{ build.status }} status.
+      {{#success build.status}}
+
+      Image is available at <https://musedbox.musedlab.org/musedboxbase/rpi2-musedboxbase-{{truncate build.commit 7}}.img.gz> :D
+      {{/success}}
+      Note that the latest build is always available at <https://musedbox.musedlab.org/musedboxbase/rpi2-musedboxbase-latest.img.gz>

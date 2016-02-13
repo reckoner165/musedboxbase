@@ -25,14 +25,14 @@ fi
 # Allocate build image
 echo -e "\e[1;32mStarted allocate disk image\e[0m"
 # truncate is only tested on Ubuntu 14.04. Please replace with the correct command for your distro
-truncate -s 3G /srv/builddir/img/rpi2-picake.img
-echo -e "\e[1;32mDisk image created at /srv/builddir/img/rpi2-picake.img\e[0m"
+truncate -s 4G /srv/builddir/img/rpi2-musedboxbase.img
+echo -e "\e[1;32mDisk image created at /srv/builddir/img/rpi2-musedboxbase.img\e[0m"
 
 # Begin partitioning disk image.
 # Creating two partitions:
 # BOOT = 100 MB
-# ROOT = 5900 MB
-fdisk /srv/builddir/img/rpi2-picake.img <<EOF
+# ROOT = 3900 MB
+fdisk /srv/builddir/img/rpi2-musedboxbase.img <<EOF
 o
 n
 p
@@ -51,7 +51,7 @@ w
 EOF
 
 # Create a loop device and mount the disk image
-export LOOPDEV="$(losetup --show --find /srv/builddir/img/rpi2-picake.img)"
+export LOOPDEV="$(losetup --show --find /srv/builddir/img/rpi2-musedboxbase.img)"
 echo -e "\e[1;32mLoop device is ${LOOPDEV}\e[0m"
 
 # Use kpartx to create partitions in /dev/mapper

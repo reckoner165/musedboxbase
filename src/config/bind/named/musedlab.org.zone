@@ -6,6 +6,8 @@ $TTL	7200
 			9H	; expire
 			30M )	; minimum
 
-@             NS     ns1.picake.org.
+@             NS     ns1.musedlab.org.
 ns1   IN	    A      10.10.0.1
 @	    IN	    A	     10.10.0.1
+api   IN	    A      10.10.0.1
+box   IN	    A      10.10.0.1

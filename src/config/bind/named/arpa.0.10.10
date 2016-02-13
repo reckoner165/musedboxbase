@@ -1,13 +1,16 @@
 $TTL 7200
-@	IN	SOA	picake.org. admin.picake.org. (
+@	IN	SOA	musedlab.org. admin.musedlab.org. (
 				2015121703	; serial
 					1H	; refresh
 					1H	; retry
 					9H	; expire
 					1D )	; Negative cache TTL
 
-	IN	NS	ns1.picake.org.
+	IN	NS	ns1.musedlab.org.
 
 ; PTR Records
-1	IN	PTR	picake.org.
-1	IN	PTR	ns1.picake.org.
+1	IN	PTR	musedlab.org.
+1	IN	PTR	ns1.musedlab.org.
+1 IN	PTR api.musedlab.org.
+1 IN	PTR box.musedlab.org.
+1 IN	PTR store.musedlab.org.

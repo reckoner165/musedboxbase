@@ -1,5 +1,5 @@
 [Unit]
-Description=Intialies the wifi network for piCake Box and starts apps in start.d
+Description=Intialies the wifi network for MusedBox and starts apps in start.d
 
 [Service]
 Type=oneshot

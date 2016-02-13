@@ -1,5 +1,4 @@
 #!/bin/bash
-APPDIR=/srv/app
 
 echo "HERE BE $DIR"
 echo -e "\e[1;32mchrooted into Arch system\e[0m"
@@ -33,16 +32,6 @@ cp -r /host-rootfs$DIR/src/config $APPDIR
 cp -r /host-rootfs$DIR/src/scripts $APPDIR
 cp -r /host-rootfs$DIR/src/deps $APPDIR
 
-if [ -n "$PRIV_KEY" ]
-then
-  echo -e "\e[1;32mInstall private key\e[0m"
-  mkdir -p /root/.ssh /home/alarm/.ssh
-  echo $PRIV_KEY > /root/.ssh/id_rsa
-  echo $PRIV_KEY > /home/alarm/.ssh/id_rsa
-  chmod 600 /root/.ssh/id_rsa /home/alarm/.ssh/id_rsa
-  chown alarm:alarm /home/alarm/.ssh/id_rsa
-fi
-
 echo -e "\e[1;32mRunning scripts in install.d\e[0m"
 # Put scripts to install in the install.d directory
 for SCRIPT in /host-rootfs$DIR/src/scripts/install.d/*
@@ -54,13 +43,13 @@ for SCRIPT in /host-rootfs$DIR/src/scripts/install.d/*
     fi
 done
 echo -e "\e[1;32mCopying service files to systemd directory \e[0m"
-cp $APPDIR/scripts/picake.service /etc/systemd/system/
+cp $APPDIR/scripts/musedbox.service /etc/systemd/system/
 echo -e "\e[1;32mCreating env variables\e[0m"
-mkdir /etc/systemd/system/picake.service.d
-cat << EOF > /etc/systemd/system/picake.service.d/env.conf
+mkdir /etc/systemd/system/musedbox.service.d
+cat << EOF > /etc/systemd/system/musedbox.service.d/env.conf
 [Service]
 Environment="APPDIR=$APPDIR"
 EOF
-echo -e "\e[1;32mEnabling Pi-Platform service manually\e[0m"
-ln -s /etc/systemd/system/picake.service /etc/systemd/system/multi-user.target.wants/picake.service
+echo -e "\e[1;32mEnabling MusedBox service manually\e[0m"
+ln -s /etc/systemd/system/musedbox.service /etc/systemd/system/multi-user.target.wants/musedbox.service
 exit 0
