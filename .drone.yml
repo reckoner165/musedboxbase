@@ -22,4 +22,4 @@ notify:
 
       Image is available at <https://musedbox.musedlab.org/musedboxbase/rpi2-musedboxbase-{{truncate build.commit 7}}.img.gz> :D
       {{/success}}
-      Note that the latest build is always available at <https://musedbox.musedlab.org/musedboxbase/rpi2-musedboxbase-latest.img.gz>
+      Note that the latest build is always available at <https://musedbox.musedlab.org/rpi2-musedboxbase-latest.img.gz>
