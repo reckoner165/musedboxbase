@@ -14,7 +14,7 @@ script:
 
 before_deploy:
   - mkdir -p /home/travis/build/NYUMusEdLab/musedboxbase/releases
-  - pigz -f --best < /srv/builddir/img/rpi2-picake.img > /home/travis/build/NYUMusEdLab/musedboxbase/releases/rpi2-musedboxbas-${TRAVIS_TAG}.img.gz
+  - pigz -f --best < /srv/builddir/img/rpi2-musedboxbase.img > /home/travis/build/NYUMusEdLab/musedboxbase/releases/rpi2-musedboxbase-${TRAVIS_TAG}.img.gz
 deploy:
   provider: releases
   api_key:
