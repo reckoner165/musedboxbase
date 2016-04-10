@@ -1,5 +1,10 @@
 #!/bin/bash
 # Zip up image and copy to mounted dir
+
+# Bash strict mode
+set -euv
+IFS=$'\n\t'
+
 echo -e "\e[1;32mImage build completed!\e[0m"
 echo -e "\e[1;32mBeginning zipping of image file to release directory...\e[0m"
 pigz -f --best < /srv/builddir/img/rpi2-musedboxbase.img > $HOSTDIR/rpi2-musedboxbase-${DRONE_COMMIT:0:7}.img.gz

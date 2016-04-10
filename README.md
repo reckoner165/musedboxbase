@@ -1,6 +1,4 @@
-### piCake (π:cake:)
-(Please work)
-An image builder and Arch base image for RPi 2 that can be extended to build images with preinstalled configs and packages.
+### piCake (π:cake:) [![Build Status](https://travis-ci.org/NYUMusEdLab/musedboxbase.svg?branch=master)](https://travis-ci.org/NYUMusEdLab/musedboxbase)
 
 # Rationale
 Building pre-built images is hard. The curent status quo is setting up the image on your device and then using `dd` to create the device image.

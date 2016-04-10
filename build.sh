@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# Set any subsequent commands to exit the shell script immediately
-set -e
+# Bash strict mode
+set -euv
+IFS=$'\n\t'
 
+echo "$(which bash)"
 # Get script directory
 export DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
