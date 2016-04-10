@@ -13,13 +13,13 @@ script:
   - sudo make build
 
 before_deploy:
-  - mkdir -p /home/travis/build/asyrique/picake/releases
-  - pigz -f --best < /srv/builddir/img/rpi2-picake.img > /home/travis/build/asyrique/picake/releases/rpi2-picake-${TRAVIS_TAG}.img.gz
+  - mkdir -p /home/travis/build/NYUMusEdLab/musedboxbase/releases
+  - pigz -f --best < /srv/builddir/img/rpi2-picake.img > /home/travis/build/NYUMusEdLab/musedboxbase/releases/rpi2-musedboxbas-${TRAVIS_TAG}.img.gz
 deploy:
   provider: releases
   api_key:
     secure: "eRbMSWuMUyshnIWF+fNRS+4ERRYOcycl7UsvQ/OuUeu8pGtJe5yMuaPqvuN/7F5j+OKBIC3akBKzRxkVDIXKYsPeRFooNl26fq+40Fy4dc0b+0st6rA8UX0GEEtSz4uwFh5Y0z4agyJrpCP86XzLNTmFZU4vND4mjyKE/7PvxKEN2F7sqL8rV7FCbbDbJepvD80B5mQ1e7vahxq4QleunV5YV4RWlv557oTH+z49uhXcwrpHcXaugJ+7rPcpZiZmFJIKI0+FY3JJicSqJfhm+b7jQGPu1nbObovkNmJr3cD1svfpt/oWVqvRed0c4orNrkOIoD85CJXPobQrhZY6G+DeIZuX2mfAT0JSGma3piSS7dq1JANUH9/Mj23zh2M1iyhuP3digpodlT8piri9C8olzyunRnpVvNvp24DOuvGLHjF8by9EMMGdMosh382Ph8mL9npqRNqSDI+ttS7XiwbkX95SkvPFy7Fm4BoHLlJq01pOeNX84KwswehBinvxru8qQ6lG5DCsm9SBdkBfGMXFhz8tVCQ7biqsMfmZQoCvqOHN0rpVZSScvKjo2ZnQBJKwMI4hlZVTNq7FKy1fTw1eIQeQsfqenZSxy3e9IwS/Uv9gU/Vp6Bq5xushYNPeaY5da+M6jp7rrUHEv4pwG8TEOYwbT0zbHEDr0ybsvdM="
-  file: /home/travis/build/asyrique/picake/releases/rpi2-picake-${TRAVIS_TAG}.img.gz
+  file: /home/travis/build/NYUMusEdLab/musedboxbase/releases/rpi2-musedboxbase-${TRAVIS_TAG}.img.gz
   skip_cleanup: true
   on:
     tags: true
