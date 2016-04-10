@@ -36,7 +36,6 @@ pacman -U --noconfirm /host-rootfs$DIR/src/kernel/linux-raspberrypi-4.1.21-1-arm
 mkdir $APPDIR
 cp -r /host-rootfs$DIR/src/config $APPDIR
 cp -r /host-rootfs$DIR/src/scripts $APPDIR
-cp -r /host-rootfs$DIR/src/deps $APPDIR
 
 if [ ! -z ${PRIV_KEY:-} ]
 then
