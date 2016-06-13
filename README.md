@@ -1,10 +1,18 @@
-### piCake (π:cake:) [![Build Status](https://travis-ci.org/NYUMusEdLab/musedboxbase.svg?branch=master)](https://travis-ci.org/NYUMusEdLab/musedboxbase)
+### MusedBoxBase [![Build Status](https://travis-ci.org/NYUMusEdLab/musedboxbase.svg?branch=master)](https://travis-ci.org/NYUMusEdLab/musedboxbase)
 
 # Rationale
 Building pre-built images is hard. The curent status quo is setting up the image on your device and then using `dd` to create the device image.
 
 # Structure
 All app files live in the `/srv` directory.
+
+# TODO
+- [ ] Wifi passthrough for debugging
+- [ ] Simple REST API and front-end app to be able to toggle system settings. Settings include:
+  - Wifi network Name
+  - WAN Network Name
+  - Enable/Disable passthrough
+  - Enable/Disable services (DNS, DHCP etc.)
 
 # Build process
 ### build.sh
@@ -74,14 +82,6 @@ If you fork this repository, but want to keep it in sync with updates pushed to 
 
 Then, you can sync your fork at any time like so:
 https://help.github.com/articles/syncing-a-fork/
-
-# TODO
-- [ ] Command-line client to build images.
-- [ ] Investigate removing dependency on Drone
-- [ ] Save $BOOTPART and $ROOTPART to a temporary build file to remove only the relevant devices in `clean.sh`.
-- [ ] Make fdisk commands more explicit i.e. don't accept defaults, specify all values.
-- [ ] Move to Alpine Linux for the build container.
-- [ ] Consider Alpine as a base for the RPi base.
 
 # License
 [Here](https://github.com/asyrique/picake/blob/master/LICENSE)
