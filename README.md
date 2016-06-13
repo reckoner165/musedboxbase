@@ -1,4 +1,8 @@
-### piCake (π:cake:) [![Build Status](https://travis-ci.org/NYUMusEdLab/musedboxbase.svg?branch=master)](https://travis-ci.org/NYUMusEdLab/musedboxbase)
+### MusedBox [![Build Status](https://travis-ci.org/NYUMusEdLab/musedboxbase.svg?branch=master)](https://travis-ci.org/NYUMusEdLab/musedboxbase)
+
+# Last Update
+13 June 2016
+Current kernel: 4.1.21
 
 # Rationale
 Building pre-built images is hard. The curent status quo is setting up the image on your device and then using `dd` to create the device image.
