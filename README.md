@@ -1,7 +1,7 @@
 ### MusedBox [![Build Status](https://travis-ci.org/NYUMusEdLab/musedboxbase.svg?branch=master)](https://travis-ci.org/NYUMusEdLab/musedboxbase)
 
 # Last Update
-13 June 2016
+13 June 2016 (v0.1.1)
 Current kernel: 4.1.21
 
 # Rationale
